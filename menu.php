@@ -4,7 +4,7 @@ function listerRepertoire($where){
     $repertoire=opendir($where); // On ouvre le répertoire where
     $i=0;
 	
-	if($where!="fichiers"){ echo "<li><h1>".substr(strrchr($where,'/'),1)."</h1><ul>"; }
+	if($where!="content"){ echo "<li><h1>".substr(strrchr($where,'/'),1)."</h1><ul>"; }
     while(($objet=readdir($repertoire)) !== false){ // Si le répertoire existe on liste son contenu
 		
 		
@@ -58,7 +58,7 @@ function listerRepertoire($where){
         }
 		
     }
-	if($where!="fichiers"){
+	if($where!="content"){
 	echo "</ul></li>"; 
 	}
 }
@@ -178,7 +178,7 @@ function listerRepertoire($where){
 		<span class="copyright" onMouseOver="show('signatureTexte')" onMouseOut="hide('signatureTexte')">&copy;</span>
 		</td>
 		<td>
-		<div id="signatureTexte">BONJOUR JEAN-JACQUES & JEREMIE DENIAU</div>
+		<div id="signatureTexte">PIERRE ROSE & JEREMIE DENIAU</div>
 		</td>
 		</tr></table>
 	</div>	
@@ -189,7 +189,7 @@ function listerRepertoire($where){
 <br>
 	<ul class="flat" >
 		<?php
-		listerRepertoire("fichiers");
+		listerRepertoire("content");
 		?>
 		
 	</ul>
